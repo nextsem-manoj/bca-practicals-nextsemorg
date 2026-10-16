@@ -1,0 +1,300 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BCA Practical Learning Portfolio | NextSem Academy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #060c18;
+      --card-bg: #0c1328;
+      --card-hover: #111a36;
+      --border: #1e293b;
+      --blue: #2563eb;
+      --blue-glow: #3b82f6;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+      min-height: 100vh;
+      padding: 2.5rem 1.5rem 4rem;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 1040px;
+      margin: 0 auto;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(37, 99, 235, 0.15);
+      border: 1px solid rgba(37, 99, 235, 0.35);
+      color: #60a5fa;
+      padding: 0.35rem 1rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, #ffffff 30%, #93c5fd 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .bio {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      max-width: 650px;
+      margin: 0 auto 1.5rem;
+    }
+    .student-card {
+      display: inline-flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      padding: 0.85rem 1.75rem;
+      border-radius: 1rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+    }
+    .student-card span {
+      color: var(--text-muted);
+    }
+    .student-card strong {
+      color: #ffffff;
+      font-weight: 600;
+    }
+    .section-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.5rem;
+    }
+    .section-title h2 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #ffffff;
+    }
+    .section-title span {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 3.5rem;
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 1.25rem;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .card:hover {
+      background: var(--card-hover);
+      border-color: var(--blue-glow);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px -10px rgba(37, 99, 235, 0.35);
+    }
+    .card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+    .day-pill {
+      background: rgba(37, 99, 235, 0.2);
+      color: #93c5fd;
+      border: 1px solid rgba(37, 99, 235, 0.4);
+      padding: 0.25rem 0.65rem;
+      border-radius: 0.5rem;
+      font-size: 0.75rem;
+      font-weight: 800;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .status-pill {
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.2rem 0.5rem;
+      border-radius: 9999px;
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: #34d399;
+    }
+    .card h3 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+      color: #ffffff;
+      line-height: 1.35;
+    }
+    .card p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-bottom: 1.25rem;
+    }
+    .card-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding-top: 0.85rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      color: #60a5fa;
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+    .card:hover .card-btn {
+      color: #ffffff;
+    }
+    footer {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+    footer a {
+      color: #60a5fa;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="badge">🚀 BCA Practical Coding Portfolio</div>
+      <h1>Hello Nextsem Developer</h1>
+      <p class="bio">
+        Documenting my daily hands-on journey through university computer science labs, web development modules, and software engineering foundations.
+      </p>
+
+      <div class="student-card">
+        <div><span>College:</span> <strong>DU ARSD</strong></div>
+        <div><span>Degree:</span> <strong>BCA (Semester 1)</strong></div>
+        <div><span>Roll No:</span> <strong>1466</strong></div>
+        <div><span>Target Role:</span> <strong>Software Engineer</strong></div>
+      </div>
+    </header>
+
+    <div class="section-title">
+      <h2>📚 Completed Practical Lessons</h2>
+      <span>Sprint 1 Foundation</span>
+    </div>
+
+    <div class="grid">
+      <!-- Day 01 -->
+      <a href="./bca-day-01/index.html" class="card">
+        <div>
+          <div class="card-top">
+            <span class="day-pill">Day 01</span>
+            <span class="status-pill">✔ Completed</span>
+          </div>
+          <h3>HTML Setup & First Webpage</h3>
+          <p>Initial HTML5 boilerplate structure, doctype declaration, document head metadata, heading tags, and bio introduction.</p>
+        </div>
+        <div class="card-btn">
+          <span>Launch Project</span>
+          <span>→</span>
+        </div>
+      </a>
+
+      <!-- Day 02 -->
+      <a href="./bca-day-02/index.html" class="card">
+        <div>
+          <div class="card-top">
+            <span class="day-pill">Day 02</span>
+            <span class="status-pill">✔ Completed</span>
+          </div>
+          <h3>Alan Turing Tribute Page</h3>
+          <p>Text formatting tags, semantic strong emphasis, chronological lists, bullet points, and biographical tribute formatting.</p>
+        </div>
+        <div class="card-btn">
+          <span>Launch Project</span>
+          <span>→</span>
+        </div>
+      </a>
+
+      <!-- Day 03 -->
+      <a href="./bca-day-03/index.html" class="card">
+        <div>
+          <div class="card-top">
+            <span class="day-pill">Day 03</span>
+            <span class="status-pill">✔ Completed</span>
+          </div>
+          <h3>Multi-Page Navigation & Images</h3>
+          <p>Multi-page navigation linking index.html, courses.html, and contact.html with accessible media and local images.</p>
+        </div>
+        <div class="card-btn">
+          <span>Launch Project</span>
+          <span>→</span>
+        </div>
+      </a>
+
+      <!-- Day 04 -->
+      <a href="./bca-day-04/index.html" class="card">
+        <div>
+          <div class="card-top">
+            <span class="day-pill">Day 04</span>
+            <span class="status-pill">✔ Completed</span>
+          </div>
+          <h3>6-Semester IGNOU BCA Curriculum Table</h3>
+          <p>Comprehensive tabular layout featuring rowspan, table headers, alternating row colors, course credits, and full 3-year syllabus structure.</p>
+        </div>
+        <div class="card-btn">
+          <span>Launch Project</span>
+          <span>→</span>
+        </div>
+      </a>
+    </div>
+
+    <footer>
+      <p>
+        Curriculum followed via <a href="https://ignou-study-notes-by-nextsem.web.app/bca/practical/" target="_blank">NextSem Academy BCA Practical Portal</a> • Authored by Er. Manoj Kumar
+      </p>
+    </footer>
+  </div>
+</body>
+</html>
